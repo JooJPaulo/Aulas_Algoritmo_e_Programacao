@@ -23,9 +23,9 @@ main() {
     printf("Digite o curso do aluno: ");
     fgets(curso, sizeof(curso), stdin);
     printf("Digite o periodo do aluno: ");
-    scanf("%s", periodo);
+    scanf("%s", &periodo);
     printf("Digite a disciplina do aluno: ");
-    fflush(stdin);
+    fflush(stdin); 
     fgets(disciplina, sizeof(disciplina), stdin);
     printf("Digite o valor da mensalidade do aluno: ");
     scanf("%f", &mensalidade, "reais");
@@ -35,7 +35,7 @@ main() {
     printf("Matricula: %s", matricula);
     printf("Endereco: %s", endereco);
     printf("Curso: %s", curso);
-    printf("Periodo: %s", periodo);
+    printf("Periodo: %d", periodo);
     printf("Disciplina: %s", disciplina);
     printf("Mensalidade: %.2f", mensalidade);
 

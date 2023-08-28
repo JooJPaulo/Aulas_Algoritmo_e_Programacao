@@ -34,7 +34,7 @@ main() {
         printf("Voce e baixo\n");
     }*/
 
-    float peso;
+    /*float peso;
 
     printf("Digite o seu peso: ");
     scanf("%f", &peso);
@@ -43,6 +43,37 @@ main() {
         printf("Voce esta acima do peso\n");
     } else {
         printf("Voce esta no peso ideal\n");
+    }*/
+
+    float nota1, nota2, media;
+
+    printf("Digite a primeira nota: ");
+    scanf("%f", &nota1);
+
+    printf("Digite a segunda nota: ");
+    scanf("%f", &nota2);
+
+    media = (nota1 + nota2) / 2;
+
+    if (media >= 7) {
+        printf("Voce foi aprovado\n");
+    } else {
+        printf("Voce esta de recuperacao\n");
+    }
+
+    float notaRecuperacao;
+
+    if (media < 7) {
+        printf("Digite a nota da recuperacao: ");
+        scanf("%f", &notaRecuperacao);
+
+        media = (media + notaRecuperacao) / 2;
+
+        if (media >= 7) {
+            printf("Voce foi aprovado\n");
+        } else {
+            printf("Voce foi reprovado\n");
+        }
     }
 
     return 0;

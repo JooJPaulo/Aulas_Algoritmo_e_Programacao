@@ -57,24 +57,11 @@ main() {
 
     if (media >= 7) {
         printf("Voce foi aprovado\n");
-    } else {
+    } else if (media >= 4 && media < 7) {
         printf("Voce esta de recuperacao\n");
-    }
-
-    float notaRecuperacao;
-
-    if (media < 7) {
-        printf("Digite a nota da recuperacao: ");
-        scanf("%f", &notaRecuperacao);
-
-        media = (media + notaRecuperacao) / 2;
-
-        if (media >= 7) {
-            printf("Voce foi aprovado\n");
-        } else {
-            printf("Voce foi reprovado\n");
-        }
-    }
+    } else {
+        printf("Voce foi reprovado\n");
+    }  
 
     return 0;
 }

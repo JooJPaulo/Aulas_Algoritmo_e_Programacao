@@ -39,20 +39,26 @@ main () {
     }*/
 
     /*Exercício 02*/
-    /*int codigoCardapio, quantidade;
-    float preco;
+    int codigoCardapio, quantidade;
+    float preco, total, totalConta = 0;
+    char continuar;
     
-    printf("Digite o codigo do produto: ");
-    scanf("%d", &codigoCardapio);
+    
 
-    switch (codigoCardapio) {
+    do {
+       printf("Digite o codigo do produto: ");
+       scanf("%d", &codigoCardapio);
+
+        switch (codigoCardapio) {
         case 100:
             preco = 10.10;
             printf("Cachorro quente\n");
+
             printf("Digite a quantidade: ");
             scanf("%d", &quantidade);
 
-            printf("Valor total: %.2f\n", preco * quantidade);
+            total = preco * quantidade;
+            printf("Valor: %.2f\n", total);
             break;
         case 101:
             preco = 8.30;
@@ -60,39 +66,53 @@ main () {
             printf("Digite a quantidade: ");    
             scanf("%d", &quantidade);
 
-            printf("Valor total: %.2f\n", preco * quantidade);
+            total = preco * quantidade;
+            printf("Valor: %.2f\n", total);
             break;
         case 102:
             preco = 8.50;
             printf("Bauru com ovo\n");
             printf("Digite a quantidade: ");
             scanf("%d", &quantidade);
-
-            printf("Valor total: %.2f\n", preco * quantidade);
+            
+            total = preco * quantidade;
+            printf("Valor: %.2f\n", total);
             break;
         case 103:
             preco = 12.50;
             printf("Hamburguer\n");
             printf("Digite a quantidade: ");
             scanf("%d", &quantidade);
-
-            printf("Valor total: %.2f\n", preco * quantidade);
+            
+            total = preco * quantidade;
+            printf("Valor: %.2f\n", total);
             break;
         case 104:
             preco = 13.25;
             printf("Cheeseburguer\n");
             printf("Digite a quantidade: ");
             scanf("%d", &quantidade);
-
-            printf("Valor total: %.2f\n", preco * quantidade);
+            
+            total = preco * quantidade;
+            printf("Valor: %.2f\n", total);
             break;
         default:
             printf("Codigo nao cadastrado\n");
             break;
-    }*/
+    }
+
+        totalConta += total;
+        printf("Deseja continuar o pedido? (s/n) ");
+        scanf(" %c", &continuar);
+
+    } while (continuar != 'n' && continuar != 'N');
+
+    printf("Total da conta: %.2f\n", totalConta);
+    
+    
     
     /*Exercício 03*/
-    int prato, bebida, sobremesa, calorias;
+    /*int prato, bebida, sobremesa, calorias;
     
     printf("Digite o prato: ");
     scanf("%d", &prato);
@@ -167,7 +187,7 @@ main () {
             break;
     }
 
-    printf("Total de calorias: %d\n", calorias);
+    printf("Total de calorias: %d\n", calorias);*/
 
     return 0;
 }

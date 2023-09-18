@@ -39,7 +39,7 @@ main () {
     }*/
 
     /*Exercício 02*/
-    int codigoCardapio, quantidade;
+    /*int codigoCardapio, quantidade;
     float preco, total, totalConta = 0;
     char continuar;
     
@@ -107,12 +107,12 @@ main () {
 
     } while (continuar != 'n' && continuar != 'N');
 
-    printf("Total da conta: %.2f\n", totalConta);
+    printf("Total da conta: %.2f\n", totalConta);*/
     
     
     
     /*Exercício 03*/
-    /*int prato, bebida, sobremesa, calorias;
+    int prato, bebida, sobremesa, calorias;
     
     printf("Digite o prato: ");
     scanf("%d", &prato);
@@ -187,7 +187,7 @@ main () {
             break;
     }
 
-    printf("Total de calorias: %d\n", calorias);*/
+    printf("Total de calorias: %d\n", calorias);
 
     return 0;
 }

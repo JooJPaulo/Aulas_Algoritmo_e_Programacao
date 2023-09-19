@@ -142,12 +142,13 @@ main() {
         printf("Digite a cor dos olhos (a para azuis, v para verdes, c para castanhos e p para pretos): ");
         scanf("%c", &corOlhos);
 
-        if((corOlhos == 'A' || corOlhos == 'a') && (corOlhos == 'V' || corOlhos == 'v') && (corOlhos == 'C' || corOlhos == 'c') && (corOlhos == 'P' || corOlhos == 'p')) {
+        if((corOlhos == 'A' || corOlhos == 'a') || (corOlhos == 'V' || corOlhos == 'v') || (corOlhos == 'C' || corOlhos == 'c') || (corOlhos == 'P' || corOlhos == 'p')) {
             continue;
         } else {
             printf("Cor invalida\n");
             break;
         }
+        fflush(stdin);
 
         printf("Digite a cor do cabelo (l para loiroa, c para castanhos, p para pretos e r para ruivos): ");
         scanf("%c", &corCabelo);

@@ -24,27 +24,18 @@ main() {
     } while (num >= 0);*/
     
     /*Exercício 03*/
-    /*int num, impares;
+    /*int num;
 
     printf("Digite um numero: ");
     scanf("%d", &num);
 
-    impares = 1;
-
-    Método ineficiente
-    for (int i = 0; num >= impares ; i++) {
-        printf("\n%d", impares);
-        impares += 2;
-    }
-
     
-    while (num >= impares) {
-        printf("\n%d", impares);
-        impares += 2;
+    for (int i = 1; num >= i; i += 2) {
+        printf("\n%d", i);
     }*/
 
     /*Exercício 04*/
-    /*int cont = 0;
+    /*int cont = 1;
 
     do {
         printf("%d\n", cont * 3);
@@ -142,13 +133,13 @@ main() {
         printf("Digite a cor dos olhos (a para azuis, v para verdes, c para castanhos e p para pretos): ");
         scanf("%c", &corOlhos);
 
-        if((corOlhos == 'A' || corOlhos == 'a') || (corOlhos == 'V' || corOlhos == 'v') || (corOlhos == 'C' || corOlhos == 'c') || (corOlhos == 'P' || corOlhos == 'p')) {
-            continue;
-        } else {
+        fflush(stdin);
+
+        if((corOlhos != 'A' || corOlhos != 'a') && (corOlhos != 'V' || corOlhos != 'v') && (corOlhos != 'C' || corOlhos != 'c') && (corOlhos != 'P' || corOlhos != 'p')) {
             printf("Cor invalida\n");
             break;
         }
-        fflush(stdin);
+
 
         printf("Digite a cor do cabelo (l para loiroa, c para castanhos, p para pretos e r para ruivos): ");
         scanf("%c", &corCabelo);

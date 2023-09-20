@@ -114,8 +114,9 @@ main() {
 
     do {
         contGeral++;
-        printf("Digite o sexo: ");
-        scanf("%c", &sexo);
+
+        printf("Digite o sexo (F/f para feminino, M/m para masculino): ");
+        scanf(" %c", &sexo);
 
         if (sexo == 'F' || sexo == 'f') {
             contF++;
@@ -123,30 +124,28 @@ main() {
             contM++;
         } else {
             printf("Sexo invalido\n");
-            break;
+            continue;
         }
 
         printf("Digite a idade: ");
         scanf("%d", &idade);
-        fflush(stdin);
 
         printf("Digite a cor dos olhos (a para azuis, v para verdes, c para castanhos e p para pretos): ");
-        scanf("%c", &corOlhos);
+        scanf(" %c", &corOlhos);
 
-        fflush(stdin);
-
-        if((corOlhos != 'A' || corOlhos != 'a') && (corOlhos != 'V' || corOlhos != 'v') && (corOlhos != 'C' || corOlhos != 'c') && (corOlhos != 'P' || corOlhos != 'p')) {
-            printf("Cor invalida\n");
-            break;
+        if (corOlhos != 'A' && corOlhos != 'a' && corOlhos != 'V' && corOlhos != 'v' &&
+            corOlhos != 'C' && corOlhos != 'c' && corOlhos != 'P' && corOlhos != 'p') {
+            printf("Cor dos olhos invalida\n");
+            continue;
         }
 
-
         printf("Digite a cor do cabelo (l para loiroa, c para castanhos, p para pretos e r para ruivos): ");
-        scanf("%c", &corCabelo);
+        scanf(" %c", &corCabelo);
 
-        if((corCabelo != 'L' || corCabelo != 'l') && (corCabelo != 'C' || corCabelo != 'c') && (corCabelo != 'P' || corCabelo != 'p') && (corCabelo != 'R' || corCabelo != 'r')) {
-            printf("Cor invalida\n");
-            break;
+        if (corCabelo != 'L' && corCabelo != 'l' && corCabelo != 'C' && corCabelo != 'c' &&
+            corCabelo != 'P' && corCabelo != 'p' && corCabelo != 'R' && corCabelo != 'r') {
+            printf("Cor do cabelo invalida\n");
+            continue;
         }
 
         printf("Digite o salario: ");
@@ -156,7 +155,7 @@ main() {
             if (idade >= 18 && idade <= 35) {
                 if (corOlhos == 'C' || corOlhos == 'c') {
                     if (corCabelo == 'C' || corCabelo == 'c') {
-                        if (salario >= 1.320) {
+                        if (salario >= 1320.0) {
                             contEspecifico++;
                         }
                     }
@@ -164,11 +163,15 @@ main() {
             }
         }
 
+        printf("Deseja continuar? (1 para sim, -1 para nao): ");
+        scanf("%d", &continuar);
+
     } while (continuar != -1);
 
-    porcentagem = (contEspecifico * 100) / contGeral;
+    porcentagem = (float)(contEspecifico * 100) / contGeral;
 
-    printf("A porcentagem de pessoas que atendem aos requisitos e: %.2f", porcentagem);
+    printf("A porcentagem de pessoas que atendem aos requisitos e: %.2f%%\n", porcentagem);
+
 
     return 0;
 }

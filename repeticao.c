@@ -43,14 +43,14 @@ main() {
     } while(cont <= 5);*/
 
     /*Exercício 05*/
-    /*int cont = 0, soma;
-
-    while (cont <= 50) {
+    /*int cont = 0, soma = 0;
+    while (cont <= 100) {
         if (cont % 2 == 0) {
             soma += cont;
         }
         cont++;
     }
+
     printf("A soma dos 50 primeiros numeros pares e: %d", soma);*/
 
     /*Exercício 06*/

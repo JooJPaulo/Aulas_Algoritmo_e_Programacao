@@ -12,7 +12,7 @@
 }*/
 
 /*Exercício 02*/
-int meses(int mes){
+/*int meses(int mes){
     switch(mes){
         case 1:
             printf("Janeiro");
@@ -54,6 +54,34 @@ int meses(int mes){
             printf("Mes invalido");
             break;
     }
+}*/
+
+/*Exercício 03*/
+/*float conversaoTemperatura(float f) {
+    float c;
+    c = (f - 32) * 5 / 9;
+    return c;
+}*/
+
+/*Exercício 04*/
+/*float medidasCilindro(float raio, float altura) {
+    float pi = 3.14, volume;
+    volume = pi * (raio * raio) * altura;
+    return volume;
+}*/
+
+/*Exercício 05*/
+/*float volumeEsfera(float raio) {
+    float pi = 3.14, volume;
+    volume = (4 / (3 * pi) * (raio * raio * raio));
+    return volume;
+}*/
+
+/*Exercício 06*/
+float imc(float peso, float altura) {
+    float imc;
+    imc = peso / (altura * altura);
+    return imc;
 }
 
 main() {
@@ -71,9 +99,43 @@ main() {
         printf("Os numeros sao iguais");
     }*/
 
-    int mes;
+    /*int mes;
     printf("Digite o numero do mes: ");
     scanf("%d", &mes);
-    meses(mes);
+    meses(mes);*/
+
+    /*float f, c;
+    printf("Digite a temperatura em Fahrenheit: ");
+    scanf("%f", &f);
+
+    c = conversaoTemperatura(f);
+    printf("A temperatura em Celsius e: %.2f", c);*/
+
+    /*float raio, altura, volume;
+    printf("Digite o raio do cilindro: ");
+    scanf("%f", &raio);
+
+    printf("Digite a altura do cilindro: ");
+    scanf("%f", &altura);
+
+    volume = medidasCilindro(raio, altura);
+    printf("O volume do cilindro e: %.2f", volume);*/
+
+    /*float raio, volume;
+    printf("Digite o raio da esfera: ");
+    scanf("%f", &raio);
+
+    volume = volumeEsfera(raio);
+    printf("O volume da esfera e: %.2f", volume);*/
+
+    float peso, altura, imc;
+    printf("Digite o peso: ");
+    scanf("%f", &peso);
+
+    printf("Digite a altura: ");
+    scanf("%f", &altura);
+
+    imc = imc(peso, altura);
+    printf("O IMC e: %.2f", imc);
 
 }

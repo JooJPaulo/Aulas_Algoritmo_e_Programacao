@@ -55,7 +55,7 @@
             break;
     }
 }*/
-
+  
 /*Exercício 03*/
 /*float conversaoTemperatura(float f) {
     float c;
@@ -78,10 +78,54 @@
 }*/
 
 /*Exercício 06*/
-float imc(float peso, float altura) {
+/*float imc(float peso, float altura) {
     float imc;
     imc = peso / (altura * altura);
     return imc;
+}*/
+
+/*Exercício 07*/
+float totalGasto(float total, int opcaoPagamento) {
+    float totalGasto;
+    switch(opcaoPagamento) {
+        case 1:
+            totalGasto = opcao1(total);
+            break;
+        case 2:
+            totalGasto = opcao2(total);
+            break;
+        case 3:
+            totalGasto = opcao3(total);
+            break;
+        default:
+            printf("Opcao invalida");
+            break;
+    }
+    return totalGasto;
+}
+
+float opcao1(float total) {
+    float totalGasto;
+    totalGasto = total - (total * 0.1);
+    return totalGasto;
+}
+
+float opcao2(float total) {
+    float totalGasto;
+    totalGasto = total/2;
+    return totalGasto;
+}
+
+float opcao3(float total, int parcelas, float juros) {
+    float totalGasto;
+    float juros = 0.3;
+
+    if(total > 100){
+        totalGasto = total + (total * juros);
+    }else{
+        totalGasto = total;
+    }
+    return totalGasto;    
 }
 
 main() {
@@ -128,7 +172,7 @@ main() {
     volume = volumeEsfera(raio);
     printf("O volume da esfera e: %.2f", volume);*/
 
-    float peso, altura, imc;
+    /*float peso, altura, imc;
     printf("Digite o peso: ");
     scanf("%f", &peso);
 
@@ -136,6 +180,25 @@ main() {
     scanf("%f", &altura);
 
     imc = imc(peso, altura);
-    printf("O IMC e: %.2f", imc);
+    printf("O IMC e: %.2f", imc);*/
 
+    float total, totalGasto;
+    int opcaoPagamento, parcelas;
+    float juros = 0.3;
+
+    printf("Digite o valor total da compra: ");
+    scanf("%f", &total);
+
+    printf("Digite a opcao de pagamento: ");
+    scanf("%d", &opcaoPagamento);
+
+    totalGasto = totalGasto(total, opcaoPagamento);
+    printf("O total gasto e: %.2f", totalGasto);
+
+    if(opcaoPagamento == 3){
+        printf("Digite o numero de parcelas: ");
+        scanf("%d", &parcelas);
+        totalGasto = totalGasto(total, opcaoPagamento, parcelas, juros);
+        printf("O total gasto e: %.2f", totalGasto);
+    }
 }

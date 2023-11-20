@@ -1,51 +1,77 @@
 #include <stdio.h>
-
-int validaQuantidade();
-float calculaSalario(int quantidade);
-
-int main() {
+#include <stdlib.h>
+struct Funcionario {
+    char nome[50];
     int quantidade;
     float salarioFinal;
+};
 
-    quantidade = validaQuantidade();
-    salarioFinal = calculaSalario(quantidade);
+void validaQuantidade(struct Funcionario *funcionario);
+void calculaSalario(struct Funcionario *funcionario);
 
-    printf("O salario final eh: %.2f\n", salarioFinal);
+int main() {
+    int numFuncionarios = 0;
+    int input;
+
+    struct Funcionario *funcionarios = malloc(sizeof(struct Funcionario));
+
+    do {
+        numFuncionarios++;
+
+        funcionarios = realloc(funcionarios, numFuncionarios * sizeof(struct Funcionario));
+
+        printf("\nFuncionario %d:\n", numFuncionarios);
+        validaQuantidade(&funcionarios[numFuncionarios - 1]);
+        calculaSalario(&funcionarios[numFuncionarios - 1]);
+
+        printf("\nDigite -1 para sair ou qualquer outro numero para continuar: ");
+        scanf("%d", &input);
+
+    } while (input != -1);
+
+    printf("\nResultados:\n");
+    for (int i = 0; i < numFuncionarios; i++) {
+        printf("\nFuncionario %d:\n", i + 1);
+        printf("Nome: %s\n", funcionarios[i].nome);
+        printf("Quantidade: %d\n", funcionarios[i].quantidade);
+        printf("Salario Final: %.2f\n", funcionarios[i].salarioFinal);
+    }
+
+    free(funcionarios);
 
     return 0;
 }
 
-int validaQuantidade() {
-    int quantidade;
+void validaQuantidade(struct Funcionario *funcionario) {
     float bonus = 0.0;
 
-    printf("Digite a quantidade produzida: ");
-    scanf("%d", &quantidade);
+    printf("Digite o nome do funcionario: ");
+    scanf("%s", funcionario->nome);
 
-    if (quantidade <= 50) {
+    printf("Digite a quantidade produzida: ");
+    scanf("%d", &funcionario->quantidade);
+
+    if (funcionario->quantidade <= 50) {
         bonus = 0;
-    } else if (quantidade > 50 && quantidade <= 80) {
+    } else if (funcionario->quantidade > 50 && funcionario->quantidade <= 80) {
         bonus = 0.5;
     } else {
         bonus = 0.75;
     }
-
-    return quantidade;
 }
 
-float calculaSalario(int quantidade) {
+void calculaSalario(struct Funcionario *funcionario) {
     float salario = 600.00;
     float bonus;
 
-    if (quantidade <= 50) {
+    if (funcionario->quantidade <= 50) {
         bonus = 0;
-    } else if (quantidade > 50 && quantidade <= 80) {
+    } else if (funcionario->quantidade > 50 && funcionario->quantidade <= 80) {
         bonus = 0.5;
     } else {
         bonus = 0.75;
     }
 
-    float salarioFinal = salario + (salario * bonus);
-
-    return salarioFinal;
+    funcionario->salarioFinal = salario + (salario * bonus);
 }
+

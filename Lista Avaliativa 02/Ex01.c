@@ -44,21 +44,12 @@ int main() {
 }
 
 void validaQuantidade(struct Funcionario *funcionario) {
-    float bonus = 0.0;
 
     printf("Digite o nome do funcionario: ");
     scanf("%s", funcionario->nome);
 
     printf("Digite a quantidade produzida: ");
     scanf("%d", &funcionario->quantidade);
-
-    if (funcionario->quantidade <= 50) {
-        bonus = 0;
-    } else if (funcionario->quantidade > 50 && funcionario->quantidade <= 80) {
-        bonus = 0.5;
-    } else {
-        bonus = 0.75;
-    }
 }
 
 void calculaSalario(struct Funcionario *funcionario) {

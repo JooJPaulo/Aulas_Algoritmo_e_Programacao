@@ -1,6 +1,27 @@
 #include<stdio.h>
 
+typedef struct {
+    int id;
+    char nome[50];
+    struct Pessoa *prox;
+} Pessoa;
+
+Pessoa *cadastrar(Pessoa *lista) {
+    Pessoa *p = (Pessoa *) malloc(sizeof(Pessoa));
+    
+    if (p == NULL) {
+        printf("Erro ao alocar memoria\n");
+        exit(1);
+    }
+
+    p->prox = NULL;
+    return p;
+
+}
+
 main() {
+    Pessoa *lista = NULL;
+
     int opcao;
     do {
         printf("1 - Cadastrar uma pessoa\n");
